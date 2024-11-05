@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Explorer</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Explore Countries</h1>
+        <input type="text" id="search" placeholder="Search for countries...">
+        <div id="suggestions"></div>
+        <div class="filters">
+            <label for="languageFilter">Language:</label>
+            <select id="languageFilter">
+                <option value="">Select Language</option>
+                <option value="All">All Languages</option>
+                <option value="English">English</option>
+                <option value="Spanish">Spanish</option>
+                <option value="French">French</option>
+                <!-- Add more languages as needed -->
+            </select>
+
+            <label for="regionFilter">Region:</label>
+            <select id="regionFilter">
+                <option value="All">All Regions</option>
+                <option value="">Select Region</option>
+                <option value="Africa">Africa</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <!-- Add more regions as needed -->
+            </select>
+        </div>
+        
+        <button id="viewFavorites" style="cursor: pointer;">View Favorites</button>
+        <button id="aboutBtn" style="cursor: pointer;">About</button> <!-- About button -->
+    </header>
+    
+    <main>
+        <div id="countryList"></div> <!-- Country cards will be displayed here -->
+        <button id="showMore">Show More</button>
+        
+        <!-- Add the About Section -->
+        <section id="about" style="display: none;"> <!-- Initially hidden -->
+            <h2>About This Application</h2>
+            <p>This application provides detailed information about countries around the world. Users can:</p>
+            <ul>
+                <li><strong>Search for Countries:</strong> Type in the search bar to find countries by name. Suggestions will appear as you type.</li>
+                <li><strong>View Country Details:</strong> Click on a country card to view detailed information, including flags, languages, and more.</li>
+                <li><strong>Manage Favorites:</strong> Click the heart button to add a country to your favorites. You can view and remove favorite countries in the Favorites section.</li>
+                <li><strong>Filter Countries:</strong> Use the language and region filters to narrow down the list of countries. Selecting "All" will display all available countries.</li>
+                <li><strong>Show More Countries:</strong> Click the "Show More" button to load additional countries beyond the initial set.</li>
+            </ul>
+            <button id="backFromAbout" style="cursor: pointer;">Back</button> <!-- Back button -->
+        </section>
+    </main>
+    
+    <aside id="favorites" style="display: none;"> <!-- Favorites section -->
+        <h2>Your Favorites</h2>
+        <button id="backBtn" style="cursor: pointer;">Back</button>
+        <div id="noFavoritesMessage" style="display: none;">
+            <p>No favorite countries yet!</p>
+        </div>
+        <ul id="favoriteList"></ul> 
+    </aside>
+    
+    <script src="script.js" defer></script>
+</body>
+</html>
